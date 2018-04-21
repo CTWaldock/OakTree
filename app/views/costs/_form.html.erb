@@ -1,0 +1,52 @@
+<%= form_with(model: cost, local: true) do |form| %>
+  <% if cost.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(cost.errors.count, "error") %> prohibited this cost from being saved:</h2>
+
+      <ul>
+      <% cost.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :rent %>
+    <%= form.text_field :rent, id: :cost_rent %>
+  </div>
+
+  <div class="field">
+    <%= form.label :food %>
+    <%= form.text_field :food, id: :cost_food %>
+  </div>
+
+  <div class="field">
+    <%= form.label :travel %>
+    <%= form.text_field :travel, id: :cost_travel %>
+  </div>
+
+  <div class="field">
+    <%= form.label :connection %>
+    <%= form.text_field :connection, id: :cost_connection %>
+  </div>
+
+  <div class="field">
+    <%= form.label :living %>
+    <%= form.text_field :living, id: :cost_living %>
+  </div>
+
+  <div class="field">
+    <%= form.label :other %>
+    <%= form.text_field :other, id: :cost_other %>
+  </div>
+
+  <div class="field">
+    <%= form.label :user_id %>
+    <%= form.text_field :user_id, id: :cost_user_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
